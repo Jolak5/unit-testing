@@ -1,7 +1,9 @@
 const { exportAllDeclaration } = require('@babel/types');
 const { default: test } = require('node:test');
+const { string } = require('yargs');
+
 const stringLength = require('./index.js');
 
-test('get length of string', () => {
-  exportAllDeclaration(stringLength('test')).toBe(4);
+it('get length of string', () => {
+  expect(stringLength('kayode')).toBe(6);
 });
